@@ -1,4 +1,4 @@
 ALF
 ===
 
-Automates el Langages Formels
+Automates et Langages Formels
