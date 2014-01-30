@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+var str="Hello Hello Hello world!";
+//look for "Hello"
+var patt=/(Hello )+/g;
+var result=patt.exec(str);
+var result = str.match(patt);
+document.write("Returned value: " +  result); 
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,2 @@
+Shifting left  -    https://www.khanacademy.org/cs/spin-off-of-lshift/6638119684145152
+Shifting right  -   https://www.khanacademy.org/cs/spin-off-of-rshift/4555046721159168

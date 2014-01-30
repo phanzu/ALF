@@ -1,0 +1,35 @@
+Tema 4 - Tataru Miruna
+
+Peg grammar 
+
+- starting by expecting a function
+- "literal"- Match exact literal string and return it (so we will have "functie()..." to parse a String)
+- we have to write the expression What's up (WHATSUP - because it is nonterminal so we use uppercase) 
+- label : expression - Match the expression and remember its match result under given label, WHATSUP:expr
+- we want to ask "What are you doing?, so we need to ask a question using label : quest. For exemple: ACTION:quest (like we did in functie)
+- if the answer is ALF: I hate ALF!
+- if not : Ok, man!
+- expression1 / expression2 / ... / expressionn - Try to match the first expression, if it does not succeed, try the second one, etc. 
+
+Here is the grammar: 
+
+start 
+   = functie
+
+functie 
+   = "functie(){"WHATSUP:expr"}"{return WHATSUP;}
+
+expr
+   = "What's up?""ACTION:quest"{return "That's cool man!"+ACTION;}
+
+quest
+   = "what are you doing?""ACT:(v:hate/w:ok)"{return ACT;}
+
+hate
+   ={return "I hate ALF!";}
+
+ok
+   ={return "Ok,man!";}
+
+
+p.s inspiratie: http://pegjs.majda.cz/documentation 

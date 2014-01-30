@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">Click the button to do a case-sensitive search for "Hello Hello Hello " in a string.</p>
+
+<button onclick="myFunction()">GO!</button>
+
+<script>
+function myFunction()
+{
+    //Nota Bene this is the exact string giving by my direct superior (the student class president) i am not sure of its veracity.
+var str = "Hello Hello Hello ";
+//Off the top of my head this is the first one we can use 
+var patt1 = /Hello /gi;
+
+var result = str.match(patt1);
+document.getElementById("demo").innerHTML=result;
+}
+</script>
+
+</body>
+</html>

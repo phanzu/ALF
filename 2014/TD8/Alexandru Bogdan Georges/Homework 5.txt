@@ -1,0 +1,37 @@
+/*
+ Gramatica verifica un limbaj de forma:
+	main()
+	{
+	ce zici mosu?
+	"r1"
+	(ce spui mosule?
+	"r2")*
+	ce spui mosule?
+	alf
+	}
+Pentru r1 va scrie pe ecran "uite bine, mosu!
+Pentru r2 va afisa "naspa alf " daca raspunsul este alf. 
+Daca r2 nu este "alf", se asteapta un nou grup "ce spui mosule?\n"raspuns pana cand raspunsul este "alf" */
+
+start
+  = main
+
+main
+ = "main()\n{\n"CEZICI:expr"}"{return CEZICI;}
+
+expr
+ = "What's up?\n" [^\n]+ "\n" DOING:questions
+{return "That's cool,man!\n"+DOING;}
+
+questions
+ =  question q:hate {return q;}
+/ question q:other qs:questions {return q+qs;};
+
+question
+ = "ce spui mosule?\n";
+
+hate
+ = "alf"i "\n"{return "naspa alf\n";}
+
+other 
+ = [^\n]+"\n"{return "hai ciao, bafta!\n";}

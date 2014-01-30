@@ -1,0 +1,51 @@
+NON ALF :P
+BONJOUR Fetelor :P
+QD9 ? Ceva :P
+VFQ ? ALF :P
+
+
+
+//CODE 1
+
+start = "NON ALF :P\n" BONJOUR QD9 VFQ
+BONJOUR ="BONJOUR " LETTRES " :P\n"
+QD9 = "QD9 ? " LETTRES " :P\n"
+VFQ = "VFQ ? " beah:LETTRES " :P" {return (beah=="ALF")?"I hate ALF!!!":beah + ", cool!";}
+LETTRES "lettres" 
+  = char:[a-zA-Z]+{return char.join("");}
+
+ RESULT: 
+[
+   "NON ALF :P
+",
+   [
+      "BONJOUR ",
+      "Fetelor",
+      " :P
+"
+   ],
+   [
+      "QD9 ? ",
+      "Ceva",
+      " :P
+"
+   ],
+   "We hate ALF!!!"
+]
+
+
+
+//CODE 2
+start="NON ALF :P\n" beah1:BONJOUR beah2:QD9 beah3:VFQ {return beah1+beah2+beah3;}
+BONJOUR ="BONJOUR " beah:LETTRES " :P\n"{return beah +", man!\n";}
+QD9 = "QD9 ? " beah:LETTRES " :P\n" {return beah + ",tb!\n";}
+VFQ = "VFQ ? " beah:LETTRES " :P" {return (beah=="ALF")?"We hate ALF!!!":beah + ", cool!";}
+LETTRES "lettres" 
+  = char:[a-zA-Z]+{return char.join("");}
+
+RESULT:  
+  "Fetelor, man!
+Ceva,tb!
+We hate ALF!!!"
+
+ECHIPA : AVRAM LOREADANA, BUCSARU ROXANA, DUMITRESCU IOANA,GRIGORE BEATRICE,GHEORGHE DANIELA 

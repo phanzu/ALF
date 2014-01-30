@@ -1,0 +1,3 @@
+$string = '*Hello Hello Hello*';
+preg_match('/hello/i', $string); // pattern case insensitive to find "hello" or "Hello"
+preg_match(/W|^Hello*\W/); // pattern for *Hello Hello Hello*

@@ -1,0 +1,17 @@
+start
+  = main	/*starting the program
+ 
+main
+ = "main()\n{\n"WHATSUP:expr"}"{return WHATSUP;}	/*matching the string and returnig it
+
+expression
+ = "What's up?\n"[^\n]+"\n"DOING:question"\n"{return "That's cool,man!\n"+DOING;}	/*here to write expression "what's up"
+
+question
+ = "What are you doing?\n"DO:(a:hate/b:cool){return DO;}	/*to ask the question "what are you doing" using the label question 
+
+hate
+ = "alf"i{return "I hate alf";}		/* if answer is "alf", will return "i hate alf"
+
+cool
+ = [^\n]+{return "Ok, man!";}		/* otherwise return "ok, man!".

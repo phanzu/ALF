@@ -1,0 +1,26 @@
+/*
+* Se recunoaste un text de forma:
+* "What's up,man?"(orice text)
+* "What are you doing?"(raspuns1)
+* (raspuns2)
+* se evalueaza raspunsul 2, daca este egal cu "alf"
+* se returneaza "I hate ALF",
+* daca nu, se returneaza "Ok, man!"
+*/
+
+
+
+
+start
+   = raspuns1 "\n" raspuns2+
+
+raspuns1
+   = "What's up,man?" text:text {return "That's cool,man!";}
+
+raspuns2
+   = "What are you doing?" text1:text "\n" text2:text {return eval(text2.join("")=="alf")?"I hate ALF":"Ok, man!";}
+
+
+text
+   =[a-zA-Z]+
+

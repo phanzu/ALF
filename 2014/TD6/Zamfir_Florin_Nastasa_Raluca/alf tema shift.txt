@@ -1,0 +1,2 @@
+shift left  : https://www.khanacademy.org/cs/turing-machine-left-shift/5789677214760960
+shift right  : https://www.khanacademy.org/cs/turing-machine-right-shift/6118019143041024

@@ -1,0 +1,13 @@
+var str = "hello bby hello girls hello teacher hello hello hello";
+var res = str.split(" ");
+var ver="hello";
+
+
+for(var i=0;i<res.length;i++)
+{
+if(res[i]==ver)
+document.write(ver+';');
+
+}
+// la aceasta tema am lucrat cu echipa formata din : Avrama Elena Loredana, Bucsaru Roxana, Dumitrescu Ioana, Grigore Elena 
+si Gheorghe Daniela 

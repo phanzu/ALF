@@ -1,0 +1,2 @@
+gauche https://www.khanacademy.org/cs/spin-off-of-turing-machine-ran/2526336747
+droite https://www.khanacademy.org/cs/spin-off-of-turing-machine-ran2/2498373099

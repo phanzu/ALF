@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+var patt1=new RegExp("Hello+");
+
+document.write(patt1.test("*Hello Hello*"));
+</script>
+
+</body>
+</html>
+
+
+//Hello+ verifica daca este cel putin un Hello in stringul nostru.
+//raspunsul:true

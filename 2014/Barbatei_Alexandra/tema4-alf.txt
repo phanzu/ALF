@@ -1,0 +1,23 @@
+start
+  = justDoIt
+
+main
+ = "justDoIt()\n{\n"WUP:expr"}"{return WUP;}
+
+expr
+ = "What's up?\n" [^\n]+ "\n" DO:questions
+{return "That's cool,man!\n"+DO;}
+
+questions
+ =  question q:hate {return q;}
+/ question q:other qs:questions {return q+qs;};
+
+question
+ = "What are you doing?\n";
+
+case1
+ = "alf"i "\n"{return "I hate alf\n";}
+
+case2 
+ = [^\n]+"\n"{return "Ok, man!\n";}
+

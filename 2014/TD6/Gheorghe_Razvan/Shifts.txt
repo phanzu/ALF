@@ -1,0 +1,3 @@
+addition and left shift: https://www.khanacademy.org/cs/addition-and-shift/5422092262572032
+
+right shift: https://www.khanacademy.org/cs/right-shift/5748202376527872

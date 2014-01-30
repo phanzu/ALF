@@ -1,0 +1,38 @@
+Tema 5
+
+
+start
+  = output
+
+output
+ = "output()\n{\n"WHATSUP:expr"}"{return WHATSUP;}
+
+exp
+ = "What's up?\n" [^\n]+ "\n" DOING:questions
+{return "That's cool,man!\n"+DOING;}
+
+questions
+ =  question q:hate {return q;}
+/ question q:other qs:questions {return q+qs;};
+
+question
+ = "What are you doing?\n";
+
+no
+ = "alf"i "\n"{return "I hate alf\n";}
+
+fine 
+ = [^\n]+"\n"{return "Ok, man!\n";}
+
+
+
+
+main()
+        {
+        What's up?
+        "answer1"
+        (What are you doing?
+        "answer2"
+        What are you doing?
+        alf
+        }

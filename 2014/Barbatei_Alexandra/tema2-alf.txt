@@ -1,0 +1,6 @@
+Addition : https://www.khanacademy.org/cs/addition/4708612874174464
+
+Right : https://www.khanacademy.org/cs/shift-right/5383728314449920
+
+Left : https://www.khanacademy.org/cs/shift-left/4777089702035456
+

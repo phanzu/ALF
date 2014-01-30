@@ -1,0 +1,4 @@
+var re = /(\w+)\s(\w+)/;
+ var str = "*Hello Hello Hello*";
+ var newstr = str.replace(re, "$2, $1");
+ print(newstr);

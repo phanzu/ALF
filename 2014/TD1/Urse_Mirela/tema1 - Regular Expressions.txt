@@ -1,0 +1,6 @@
+re = *Hello Hello Hello*;
+el = re.exec("test23test");
+if (el.length > 0 )
+    for(i=1; i<el.length; i++)
+        document.write(i + ":" + el[i] + "<br />");
+else document.write("No match!");

@@ -1,0 +1,32 @@
+Tema 4
+
+/*
+ Gramatica verifica un limbaj de forma:
+        main()
+        {
+        Ce mai zici?
+        "raspuns1"
+        Ce faci?
+        "raspuns2"
+        }
+ raspuns1 ==> "E ok omule!"
+ raspuns2 ==> "Urasc alf" or "Bine, omule!" 
+ */
+
+start
+  = app
+
+app
+ = "app()\n{\n"WHATSUP:expr"}"{return WHATSUP;}
+
+expr
+ = "Ce mai zici?\n"[^\n]+"\n"DOING:intrebare"\n"{return "E ok omule!\n"+DOING;}
+
+intrebare
+ = "Ce faci?\n"DO:(a:urasc/b:tare){return DO;}
+
+urasc
+ = "alf"i{return "Urasc alf";}
+
+tare
+ = [^\n]+{return "Bine, omule!";}

@@ -1,0 +1,42 @@
+Tema 5
+
+/*
+Gramatica
+        main()
+        {
+        Ce faci?
+        "raspuns1"
+        (Ce mai zici?
+        "raspuns2"
+        Ce mai zici?
+        alf
+        }
+Pentru raspuns1 ==>"Bine, omule!"
+Pentru answer2 ==> "Urasc alf"  
+*/
+
+
+
+
+start
+  = main
+
+main
+ = "main()\n{\n"WHATSUP:expr"}"{return WHATSUP;}
+
+expr
+ = "Ce faci?\n" [^\n]+ "\n" DOING:intrebari
+{return "Bine, omule!\n"+DOING;}
+
+intrebari
+ =  intrebare q:urasc {return q;}
+/ intrebare q:other qs:intrebari {return q+qs;};
+
+intrebari
+ = "Ce mai zici?\n";
+
+urasc
+ = "alf"eu "\n"{return "Urasc alf \n";}
+
+other 
+ = [^\n]+"\n"{return "Bine, omule!\n";}

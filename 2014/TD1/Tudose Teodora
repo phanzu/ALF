@@ -1,0 +1,5 @@
+//The exec() method searches a string for a specified value, and returns the text of the found value. If no match is found, it returns null.
+
+function f() {
+var patt1=new RegExp("Hello Hello Hello");
+document.write(patt1.exec("abc Hello Hello Hello abc")); }

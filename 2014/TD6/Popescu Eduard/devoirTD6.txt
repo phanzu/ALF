@@ -1,0 +1,2 @@
+left https://www.khanacademy.org/cs/devoir-left-shift/6017837420249088
+right https://www.khanacademy.org/cs/devoir-right-shift/5397355440373760

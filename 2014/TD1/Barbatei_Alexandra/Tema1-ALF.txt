@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+var exp=new RegExp("It's cool to say *Hello Hello Hello*, not only Hello");
+
+document.write(exp.test("*Hello Hello Hello*"));
+</script>
+
+</body>
+</html>
+

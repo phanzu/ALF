@@ -1,0 +1,6 @@
+function main() {
+    var patt = new RegExp('Hello Hello Hello', i);
+    result = patt.test('Hello Hello Hello all you boys and girls');
+    return result;
+    
+}

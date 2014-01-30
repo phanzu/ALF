@@ -1,0 +1,6 @@
+
+start
+  =additive { return "";}
+
+additive
+  = "*" "Hello "+ "Hello" "*"

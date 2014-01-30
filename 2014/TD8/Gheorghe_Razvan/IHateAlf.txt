@@ -1,0 +1,30 @@
+/*
+This grammar checks the following:
+
+1'st answer -> "That's cool, man!
+2'nd answer -> "I hate alf" ,if the answer is alf  
+If the answer is not "alf",the question will be "What are you doing?\n"
+till the answer will be "alf" */
+
+start
+  = function
+
+function
+ = "function()\n{\n"WHATSUP:expr"}"{return WHATSUP;}
+
+expr
+ = "What's up?\n" [^\n]+ "\n" Working:qmv
+{return "That's cool,man!\n"+Working;}
+
+qmv
+ =  qs q1:hate {return q1;}
+/ qs q1:other q2:qmv{return q1+q2;};
+
+qs
+ = "What are you doing?\n";
+
+hate
+ = "alf"i "\n"{return "I hate alf\n";}
+
+other
+ = [^\n]+"\n"{return "Ok, man!\n";}

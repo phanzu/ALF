@@ -1,0 +1,32 @@
+input:NON ALF :P
+What are you doing?WatchingMovies :P
+What's up ? Cool :P
+VFQ ? ALF :P
+
+
+start
+  ="NON ALF :P\n" whatdo whats VFQ
+
+
+whatdo ="What are you doing?" LETTRES " :P\n"
+
+whats = "What's up ? " LETTRES " :P\n"
+
+
+VFQ = "VFQ ? " beah:LETTRES " :P\n" {return (beah=="ALF")?"I hate ALF!!!":beah + ", cool!";}
+
+questions
+ =  whatdo w:hate {return w;}
+/ whatdo w:other ws:questions {return w+ws;};
+
+hate
+ = "alf"i "\n"{return "I hate alf\n";}
+
+other 
+ = [^\n]+"\n"{return "Cool, man!\n";}
+
+LETTRES "lettres" 
+  = char:[a-zA-Z]+{return char.join("");}
+  
+
+

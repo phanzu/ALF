@@ -1,0 +1,34 @@
+
+1
+Write your PEG.js grammar
+/*
+ * Classic example grammar, which recognizes simple arithmetic expressions like
+ * "2*(3+4)". The parser generated from this grammar then computes their value.
+ */
+
+start
+  = "NON ALF :P\n" beah1:BONJOUR beah2:QD9 beah3:VFQ {return beah1+beah2+beah3;}
+
+BONJOUR 
+ = "BONJOUR " beah:LETTRES " :P\n" {return beah +" YOU HAVE TO\n"; }
+
+
+QD9  
+ = "QD9 ? " beah:LETTRES " :P\n" {return " DO "}
+
+VFQ 
+ = "VFQ ? " beah:LETTRES " :P" {return beah + " WITH YOUR TEAM "; }
+
+
+LETTRES "lettres"
+  = char:[a-zA-Z]+ {return char.join("");}
+
+
+
+2 Test the generated parser with some input
+NON ALF :P
+BONJOUR CEASUSECU :P
+QD9 ? do :P
+VFQ ? ALF :P
+
+..........

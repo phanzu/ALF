@@ -1,0 +1,10 @@
+Tema 1
+
+
+function main(string)
+{
+var merlinexp = new MerlinExp('(Hello Hello Hello){1,}');
+var sol = merlinexp.test(string);
+return sol;
+}
+

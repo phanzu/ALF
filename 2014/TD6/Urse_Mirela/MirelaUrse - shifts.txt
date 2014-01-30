@@ -1,0 +1,5 @@
+shift left
+https://www.khanacademy.org/cs/spin-off-of-turing-machine-mirelaurse-1230f/2540183576
+
+shift right
+https://www.khanacademy.org/cs/spin-off-of-turing-machine-2-mirelaurse-1230f/2513032562

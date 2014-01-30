@@ -1,0 +1,31 @@
+1)The grammar
+
+start
+  = "NON ALF :P\n" b1:HELLO b2:WHAZUP b3:WHATRUDOING {return b1+b2+b3;}
+
+HELLO 
+ = "HELLO " b:LETTERS " :P\n" {return " Oh, hey there, " +b +" !\n" ; }
+
+
+WHAZUP  
+ = "WHAZUP? " b:LETTERS " :P\n" {return b+ " it is that you are doing? Ok then.\n "}
+
+WHATRUDOING 
+ = "WHATRUDOING? " b:LETTERS ":p" {return (b=="ALF")?"I hate ALF!":b + " Ooh I see.That sounds cool! "; }
+
+
+LETTERS "letters"
+  = char:[a-zA-Z]+ {return char.join("");}
+
+2.)The input
+
+NON ALF :P
+HELLO Steffy :P
+WHAZUP? nothing :P
+WHATRUDOING? ALF:p
+
+3.)Output
+
+" Oh, hey there, Steffy !
+nothing it is that you are doing? Ok then.
+ I hate ALF!"

@@ -1,0 +1,22 @@
+start
+  = do
+
+do
+ = "do(){"WHATSUP:expr"}"{return WHATSUP;}
+
+expr
+ = "What's up?"" ANSWER:questions
+{return "That's cool,man!"+ANSWER;}
+
+questions
+ = question q:hate {return q;}
+/ question q:other qs:questions {return q+qs;};
+
+question
+ = "What are you doing?\n";
+
+hate
+ = "alf"i+{return "I hate alf\n";}
+
+okcool
+ = [A-Za-z]+"\n"{return "Ok, man!\n";}

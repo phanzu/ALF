@@ -1,0 +1,22 @@
+start
+ = result
+
+result
+ = "result()\n{\n"WHATSUP:expr"}"{return WHATSUP;}
+
+expr
+ = "What's up?\n"[^\n]+"\n" DOING:questions
+{return "That's cool,man!\n"+DOING;}
+
+questions
+ =  question q:hate {return q;}
+/ question q:okish qs:questions {return q+qs;};
+
+question
+ = "What are you doing?\n";
+
+hate
+ = "alf"i "\n"{return "I hate alf\n";}
+
+okish 
+ = [^\n]+"\n"{return "Ok, man!\n";}

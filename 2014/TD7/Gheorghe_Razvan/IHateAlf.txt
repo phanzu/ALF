@@ -1,0 +1,24 @@
+/*
+ This grammar checks the following:
+	
+1'st answer -> "That's cool, man!
+2'nd answer -> "I hate alf" ,if the answer is "alf" otherwise "Ok, man!" 
+. */
+
+start
+  = function
+
+function
+ = "function()\n{\n"WHATSUP:expr"}"{return WHATSUP;}
+
+expr
+ = "What's up?\n"[^\n]+"\n"Bla:q"\n"{return "That's cool,man!\n"+Bla;}
+
+q
+ = "What are you doing?\n"D:(x:hate/y:cool){return D;}
+
+hate
+ = "alf"i{return "I hate alf";}
+
+cool
+ = [^\n]+{return "Ok, man!";}

@@ -1,0 +1,14 @@
+start
+  = intrebare
+intrebare
+ = "intrebare()\n{\n"WHATSUP:expr"}"{return WHATSUP;}
+expr
+ = "What's up?\n"[^\n]+"\n" DOING:question{return "That's cool,man!\n"+DOING;}
+question
+   = "what are you doing?""ACT:(a:hate/b:ok)"{return ACT;}
+hate
+   ={return "I hate ALF";}
+ok
+   = "What are you doing?"{return "Ok,man";}
+ 
+ 

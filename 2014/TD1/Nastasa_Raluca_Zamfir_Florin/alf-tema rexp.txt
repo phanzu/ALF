@@ -1,0 +1,32 @@
+solutie 1 pentru afisare "Hello Hello Hello":
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+var str="Hello Hello Hello world!";
+//look for "Hello"
+var patt=/(Hello )+/g;
+var result=patt.exec(str);
+var result = str.match(patt);
+document.write("Returned value: " +  result); 
+
+</script>
+</body>
+</html>
+
+solutie 2 pentru afisare "*Hello Hello Hello*":
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+var patt1=new RegExp("Hello+");
+
+document.write(patt1.test("*Hello Hello Hello*"));
+</script>
+
+</body>
+</html>

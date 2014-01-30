@@ -1,0 +1,23 @@
+/*
+*Se verifica un text de forma: 
+* "What's up,man?"(introduceti orice text)
+* "What are you doing?" (introduceti raspuns)
+* daca raspunsul este "alf", se va returna "I hate ALF",
+* daca nu, se va returna "Ok, man!"
+*/
+
+
+
+start
+   = raspuns1 "\n" raspuns2*
+
+raspuns1
+   = "What's up,man?" text:text {return "That's cool,man!";}
+
+raspuns2
+   = "What are you doing?" text:text "\n" {return eval(text.join("")=="alf")?"I hate ALF":"Ok, man!";}
+
+
+text
+   =[a-zA-Z]+
+

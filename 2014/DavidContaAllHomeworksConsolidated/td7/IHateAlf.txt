@@ -1,0 +1,30 @@
+/*
+ Gramatica verifica un limbaj de forma:
+	main()
+	{
+	What's up?
+	"answer1"
+	What are you doing?
+	"answer2"
+	}
+ answer1 ==> "That's cool, man!
+ answer2 ==> "I hate alf" or "Ok, man!" 
+ */
+
+start
+  = main
+
+main
+ = "main()\n{\n"WHATSUP:expr"}"{return WHATSUP;}
+
+expr
+ = "What's up?\n"[^\n]+"\n"DOING:question"\n"{return "That's cool,man!\n"+DOING;}
+
+question
+ = "What are you doing?\n"DO:(a:hate/b:cool){return DO;}
+
+hate
+ = "alf"i{return "I hate alf";}
+
+cool
+ = [^\n]+{return "Ok, man!";}

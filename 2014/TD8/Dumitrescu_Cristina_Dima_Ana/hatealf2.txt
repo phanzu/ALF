@@ -1,0 +1,23 @@
+start
+  = main
+
+main
+ = "main()\n{\n"WHATSUP:expr"}"{return WHATSUP;}
+
+expr
+ = "What's up?\n"[^\n]+"\n"DOING:intr"\n"{return "That's cool,man!\n"+DOING;}
+
+intr
+ = "What are you doing?\n"DO:(a:varianta1/b:varianta2){return DO;}
+
+varianta1
+ = "alf"i{return "I hate alf";}
+
+varianta2
+ = [^\n]+{return "Ok, man!";}
+ 
+ 
+ input:
+main(){
+ALF Labs
+}

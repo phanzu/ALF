@@ -1,0 +1,42 @@
+Input:
+	NON ALF :P
+Ce faci mosu?ma uit la mama:P
+ce zici? Cool :P
+porc ? ALF :P
+
+
+start
+  ="NON ALF :P\n" whatdo whats VFQ
+
+
+whatdo ="Ce faci mosu?" LETTRES " :P\n"
+
+whats = "ce zici ? " LETTRES " :P\n"
+
+
+porc = "porc ? " beah:LETTRES " :P\n" {return (beah=="ALF")?"I hate ALF!!!":beah + ", cool!";}
+
+
+LETTRES "lettres" 
+  = char:[a-zA-Z]+{return char.join("");}
+
+Output:
+
+
+[
+   "NON ALF :P
+",
+   [
+      "ce faci mosu?",
+      "ma uit la mama",
+      " :P
+"
+   ],
+   [
+      "ce zici ? ",
+      "Cool",
+      " :P
+"
+   ],
+   "I hate ALF!!!"
+]  

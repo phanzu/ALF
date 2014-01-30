@@ -1,0 +1,34 @@
+Tema 5 - Tataru Miruna
+
+Peg grammar 
+
+- starting by expecting a function
+- "literal"- Match exact literal string and return it (so we will have "functie()..." to parse a String)
+- we have to write the expression What's up (WHATSUP - because it is nonterminal so we use uppercase) 
+- label : expression - Match the expression and remember its match result under given label, WHATSUP:expr
+- same as "Tema4.txt", but if the answer is not ALF, it waits it till it is ALF
+- we have to make a loop (repeat What are you doing? until ALF) - it enters the loop 0, 1, or infinite, something like 
+(What are you doing?)*- in ok I tried to do something
+
+Here is the grammar: 
+
+start 
+   = functie
+
+functie 
+   = "functie(){"WHATSUP:expr"}"{return WHATSUP;}
+
+expr
+   = "What's up?""ACTION:quest"{return "That's cool man!"+ACTION;}
+
+quest
+   = "what are you doing?""ACT:(v:hate/w:ok)"{return ACT;}
+
+hate
+   ={return "I hate ALF";}
+
+ok
+   = "What are you doing?"{return "Ok,man";}
+
+
+p.s inspiratie: http://pegjs.majda.cz/documentation 

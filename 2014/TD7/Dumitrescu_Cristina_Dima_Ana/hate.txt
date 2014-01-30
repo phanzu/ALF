@@ -1,0 +1,17 @@
+start
+  = main
+
+main
+ = "main()\n{\n"WHATSUP:expresie"}"{return WHATSUP;}
+
+expresie
+ = "What's up?\n"[^\n]+"\n"DOING:ask"\n"{return "That's cool,man!\n"+DOING;}
+
+ask
+ = "What are you doing?\n"DO:(a:v1/b:v2){return DO;}
+
+v1
+ = "alf"i{return "I hate alf";}
+
+v2
+ = [^\n]+{return "Ok, man!";}

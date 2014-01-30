@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">Click the button to do a global search for "is" in a string.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction()
+{
+var str = "Hello my name is Razvan, bla Hello<>9-, and another!!Hello=-?";
+var word= /Hello/g;
+var result = str.match(word);
+document.getElementById("demo").innerHTML=result;
+}
+</script>
+
+</body>
+</html>
+
+http://www.w3schools.com/js/tryit.asp?filename=tryjsref_regexp_g

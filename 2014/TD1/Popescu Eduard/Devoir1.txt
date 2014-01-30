@@ -1,0 +1,10 @@
+Tema 1
+
+
+function main(string)
+{
+var a = new RegExp('(Hello Hello Hello){1,}');
+var b = a.test(string);
+return b;
+}
+
