@@ -19,4 +19,12 @@ http://ssw.jku.at/Coco/
 
 http://pegjs.majda.cz/
 
+https://www.khanacademy.org/computer-programming/game-of-life/879123336
+
+http://www.google.com/doodles/alan-turings-100th-birthday
+
+https://github.com/AzuraMeta/TuringMachine
+
+
+
 
