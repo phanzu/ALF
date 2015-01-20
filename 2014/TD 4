@@ -1,0 +1,44 @@
+grammar Boss;
+r : ID EQUAL Expr EOI ;
+
+//Notre expression mathématique
+Expr = sum ;
+
+// Somme
+sum : sub '+' sum //{ return sub + sum ; }
+	| sub
+	;
+
+//difference	
+sub : exp '-' sub //{ return exp - sub ; }
+	| exp
+	;
+
+//exponentielle
+exp : mul '^' div //{ return Math.pow(div,exp); }
+	| div
+	;
+
+//	la fonction de partage
+div : mul '/' div //{ return mul / div ;}
+	| mul
+	;
+
+//multiplication
+mul : pri '*' mul //{ return pri * mul ;}
+	| pri
+	;
+
+//priorité des operation entre les parenthése
+pri = INT
+	| '(' sum ')' //{ return sum ;}
+	;
+
+//numbers , numbers everywhere
+INT : [0-9]+
+//nom des variables
+ID : [a-zA-Z]+
+//séparation des variables  
+EQUAL : [ = ] 
+//End Of Input
+EOI : [$][$]
