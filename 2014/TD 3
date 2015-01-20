@@ -1,0 +1,52 @@
+start
+  = (boss)*
+
+
+boss
+   =right: dollar {return left}
+
+
+dollar 
+  = final:[$][$]"\n" { return final }   
+   
+
+sep
+   = left:string " = " right:additive { return left+' = '+right }
+
+
+additive
+  = left:soustraction "+" right:additive { return left + right; }
+  / soustraction
+
+
+soustraction
+  = left:exp "-" right:soustraction { return left - right; }
+  / exp
+
+
+exp
+  = left:divdiv "^" right:exp {return Math.pow(left,right)}
+  / divdiv
+
+  
+divdiv
+  = left:multiplicative "/" right:division {return left/right}
+  / multiplicative
+
+
+multiplicative
+  = left:primary "*" right:multiplicative { return left * right; }
+  / primary
+
+
+primary
+  = integer
+  / "(" additive:additive ")" { return additive; }
+
+
+integer "integer"
+  = (digits:[0-9]+) { return parseInt(digits.join(""), 10); }
+
+  
+string "string"
+  = variable:([a-zA-Z]+) { return variable.join(""); }
