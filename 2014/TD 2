@@ -1,0 +1,25 @@
+!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+function myFunction() {
+
+var str="A = 125 :)";
+var str2="B = 44 + A :)";
+var a=str.split(";");
+var b=str2.split(";");
+x=eval(a[0]);
+y=eval(b[0]);
+var resultat=a[0]+"<br>"+b[0]+"<br>"+"Le resultat de l'operation B=1+A est: <br>"+ y;
+if (/(((([a-z|A-Z])(\s[=]\s)))(((\d{8}\s;-[)])|(\d{7}\s;-[)])|(\d{6}\s;-[)])|(\d\s;-[)]))|((\d{8}|\d{7}|\d{6}|\d)(\s[+]\s)([a-z|A-Z])(\s;-[)]))|((\d{8}|\d{7}|\d{6}|\d)(\s[-]\s)(\d{8}|\d{7}|\d{6}|\d)(\s;-[)]))|((\d{8}|\d{7}|\d{6}|\d)(\s[*]\s)(\d{8}|\d{7}|\d{6}|\d)(\s;-[)]))))/g.test(str))
+{
+document.getElementById("demo").innerHTML = resultat;}
+else
+{ document.getElementById("demo").innerHTML = "L'expression n'est pas valable ";}
+}
+</script>
+</body>
++</html>
